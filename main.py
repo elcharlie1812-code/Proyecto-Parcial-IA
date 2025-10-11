@@ -1,18 +1,41 @@
 import pygame
 
-# Initialize Pygame
-pygame.init()   
-screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("Mijuego")
 
-ejecutando = True
-while ejecutando:
-    for evento in pygame.event.get():
-        if evento.type == pygame.QUIT:
-            ejecutando = False
+from scrips.Config import SCREEN_WIDTH, SCREEN_HEIGHT, FPS
+from scrips.Jugador import Jugador  
+from scrips.Mapa import Mapa
+from scrips.Enemigo import Enemigo  
+from scrips.Albordecomportamiento import Albordecomportamiento
 
 
-screen  .fill((0, 0, 0))  # Fill the screen with black
-pygame.display.update()  # Update the display
+# Inicializar Pygame
+pygame.init()
 
-pygame.quit()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+clock = pygame.time.Clock()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+# Forzar todos los archivos de texto a usar LF (formato Unix)
+* text eol=lf
+
+# Archivos binarios (no modificar saltos de línea)
+*.png binary
+*.jpg binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.ttf binary
