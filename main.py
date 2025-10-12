@@ -1,27 +1,21 @@
 import pygame
-from scripts.Config import *
+from scripts.Constantes import *
+from scripts.Personaje import Personaje
 
-def main():
-    pygame.init()
-    
-    # Crear ventana
-    pantalla = pygame.display.set_mode((ANCHO, ALTO))
-    pygame.display.set_caption("Proyecto Gauntlet")
-    
-    reloj = pygame.time.Clock()
-    ejecutando = True
+Jugador = Personaje(50,50)
 
-    while ejecutando:
-        for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
-                ejecutando = False
 
-        # Fondo negro
-        pantalla.fill((0, 0, 0))
-        pygame.display.flip()
-        reloj.tick(FPS)
+pygame.init()
+pantalla = pygame.display.set_mode((ANCHO, ALTO))
+pygame.display.set_caption(Gauntlet)
 
-    pygame.quit()
 
-if __name__ == "__main__":
-    main()
+run = True
+
+while run == True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    pantalla.fill() 
+
