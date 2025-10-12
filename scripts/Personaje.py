@@ -1,9 +1,11 @@
 import pygame 
+from scripts.Constantes import *
 
 class Personaje:
     def __init__(self, x, y):
-        self .forma = pygame.Rect(0,0,20,20)
-        self .forma.center = (x,y)# Verde
-
-    def dibujar(self, pantalla):
-        pygame.draw.rect(pantalla, self.color: (2255,255,0) , (self.x, self.y, 50, 50))
+       self.forma = pygame.Rect(0 , 0, ALTO_PERSONAJE, ANCHO_PERSONAJE) 
+       self.forma.center = (x,y) 
+       
+       
+    def dibujar(self, interfaz):   # Un cuadrado de 50x50
+        pygame.draw.rect(interfaz, COLOR_PERSONAJE , self.forma)
