@@ -4,8 +4,10 @@ ANCHO = 800
 ALTO = 600
 FPS = 60
 
-ALTO_PERSONAJE = 50
-ANCHO_PERSONAJE = 50
+ALTO_PERSONAJE = 5
+ANCHO_PERSONAJE = 5
+
+ESCALA_IMAGEN= 0.2
 
 TITLE = "Proyecto Gauntlet"
 
@@ -18,6 +20,7 @@ AZUL = (0, 0, 255)
 COLOR_PERSONAJE = (255, 255, 0)  # Amarillo
 
 
+COLOR_FONDO = (0,0,20)
 
 
-
+Velocidad = 5
