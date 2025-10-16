@@ -7,8 +7,13 @@ pygame.init()
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Gauntlet")
 
+Jugador_imagenes = pygame.image.load("assets//image//jugador//Jugador_1.png")
+Jugador_imagenes = pygame.transform.scale(
+    Jugador_imagenes,
+    (Jugador_imagenes.get_width() * ESCALA_IMAGEN,
+     Jugador_imagenes.get_height() * ESCALA_IMAGEN))
 
-Jugador = Personaje(50,50)
+Jugador = Personaje(ALTO_PERSONAJE,ANCHO_PERSONAJE,Jugador_imagenes)
 
 
 # Movimiento
@@ -17,9 +22,14 @@ mover_abajo = False
 mover_izquierda = False
 mover_derecha = False
 
+#control de frame rate
+reloj = pygame.time.Clock()
+
 run = True
 while run == True:
-    
+     
+    reloj.tick(FPS)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
@@ -51,18 +61,18 @@ while run == True:
     delta_y = 0
 
     if mover_derecha:
-        delta_x = 5
+        delta_x = Velocidad
     if mover_izquierda:
-        delta_x = -5
+        delta_x = -Velocidad
     if mover_arriba:
-        delta_y = -5
+        delta_y = -Velocidad
     if mover_abajo:
-        delta_y = 5
+        delta_y = Velocidad
 
     Jugador.movimiento(delta_x, delta_y)
 
 
-    pantalla.fill((0, 0, 0))  # Fondo negro
+    pantalla.fill(COLOR_FONDO)  # Fondo negro
     Jugador.dibujar(pantalla)
     pygame.display.update()
 
