@@ -1,3 +1,8 @@
+# scripts/Personaje.py
+# Autor: [Charlie Baez, 21-SISN-2-028]
+# Personaje
+
+
 import pygame
 from scripts.Constantes import *
 
