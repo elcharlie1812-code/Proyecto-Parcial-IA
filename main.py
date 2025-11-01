@@ -1,11 +1,36 @@
 import pygame
 from scripts.Constantes import *
 from scripts.Personaje import Personaje
+from scripts.menu import menu
+
 
 pygame.init()
 
+
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Gauntlet")
+
+# Crear el menú
+menu = menu(pantalla)
+
+# Menú principal
+en_menu = True
+while en_menu:
+    for evento in pygame.event.get():
+        if evento.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+
+        accion = menu.manejarevento(evento)
+        if accion == "jugar":
+            en_menu = False
+        elif accion == "salir":
+            pygame.quit()
+            exit()
+
+    menu.dibujar()
+    pygame.display.update()
+
 
 Jugador_imagenes = pygame.image.load("assets//image//jugador//Jugador_1.png")
 Jugador_imagenes = pygame.transform.scale(
